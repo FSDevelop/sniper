@@ -2,7 +2,11 @@ module.exports = (keyword, sentence, app) => {
     let statement = sentence.split(`${keyword} `)[1]
     switch (keyword) {
         case 'log':
-            console.log(statement)
+            if (statement.includes('"')) {
+                console.log(statement)
+            } else {
+                console.log(app.memory[statement])
+            }
             break
         case 'var':
             let kv = statement.split(' = ')

@@ -8,7 +8,6 @@ module.exports = (sentence, app) => {
         if (lineNotEmpty) {
             for (let keyword of keywords) {
                 if (sentence.includes(`${keyword} `)) {
-                    console.log('executing a', keyword)
                     executeStatement(keyword, sentence, app)
                 }
             }
